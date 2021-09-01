@@ -350,6 +350,59 @@
       </div>
     </div>
 
+
+
+<div class="ContactUS bg-white pt-4 pb-4">
+
+        
+<section class="get-in-touch">
+   <h1 class="title">Get in touch</h1>
+
+<p v-if="error.length">
+   <marquee  width="40%" > Oops..You Have Missed Something..!</marquee>
+
+  <ul>
+    <li v-for="e in error" v-bind:key="e.id" class="ListErrors">
+      {{e}}
+
+    </li>
+  </ul>
+
+</p>
+   <form @submit="Login" class="contact-form row">
+    
+      <div class="form-field col-lg-6">
+         <input id="name" class="input-text js-input" type="text" v-model="name" >
+         <label class="label" >Name</label>
+      </div>
+     
+      <div class="form-field col-lg-6 ">
+         <input id="email" class="input-text js-input" type="email" v-model="email"  >
+         <label class="label"  >E-mail</label>
+      </div>
+     
+      
+      <div class="form-field col-lg-12">
+         <input id="message" class="input-text js-input" type="text" v-model="message" >
+         <label class="label" >Message</label>
+      </div>
+
+
+      <div class="form-field col-lg-12">
+         <input class="submit-btn" type="submit" value="Submit">
+      </div>
+   </form>
+</section>
+
+
+
+
+      
+
+
+
+    </div>
+
     <div class="PriceDiv2 bg-white">
       <i class="fab fa-canadian-maple-leaf icon-icon"></i>
       <h3>
@@ -377,10 +430,61 @@
 <script>
 export default {
   name: "Home",
+
+  data(){
+    return{
+      error: [],
+      name:null,
+      email:null,
+      message:null
+    }
+  },
+  
+  methods:{
+    Login(e)
+    {
+      if(this.name && this.email && this.message){
+        console.log("SuccessFully Done");
+        alert("Thanks For Contacting Us...!")
+      }
+
+        this.error=[];
+        if(!this.name){
+         this.error.push("Please Enter Name..!")
+        }
+
+         if(!this.email){
+         this.error.push("Please Enter Email..!")
+        }
+
+        
+         if(!this.message){
+         this.error.push("Please Enter us a Message for us..!")
+        }
+
+        console.warn("Error: " + this.error)
+
+      e.preventDefault()
+
+      this.name="";
+       this.email="";
+      this.message="";
+
+
+     
+
+    }
+  }
 };
 </script>
 
 <style scoped>
+
+.ListErrors{
+  color: red;
+  list-style: none;
+
+}
 .mainHomeDiv {
   overflow-x: hidden;
 }
@@ -765,6 +869,92 @@ export default {
   color: grey;
   font-weight: bold;
 }
+
+
+
+
+
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 3.2em;
+  line-height: 48px;
+  padding-bottom: 48px;
+     color: #5543ca;
+    background: #5543ca;
+    background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 25px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543ca;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, 
+  -webkit-transform .2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+   background-image: linear-gradient(125deg,#a72879,#064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width:200px;
+  cursor: pointer;
+
+}
+
+.contact-form .submit-btn:hover{
+    background: #833ab4; 
+background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
+
+}
+
+
 
 @media (max-width: 570px) {
   .finalP {
