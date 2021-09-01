@@ -59,7 +59,7 @@
       <div class="Chooseus">
         <div class="container">
           <div class="row">
-            <div class="col"></div>
+           
 
             <div class="Icons">
               <div class="d-flex">
@@ -434,6 +434,7 @@ export default {
   data(){
     return{
       error: [],
+      
       name:null,
       email:null,
       message:null
@@ -1095,6 +1096,10 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   .contact-us {
     padding-top: 5rem;
     padding-bottom: 4.5rem;
+  }
+
+  .get-in-touch .title{
+    font-size: 2.5rem;
   }
 }
 
