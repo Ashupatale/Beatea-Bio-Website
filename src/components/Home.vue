@@ -61,22 +61,32 @@
           <div class="row">
             <div class="col"></div>
 
-            <div class=" col-lg-1  Icons">
-              <div><i class="fas fa-check-circle"></i></div>
-              <div><i class="fas fa-check-circle"></i></div>
-              <div><i class="fas fa-check-circle"></i></div>
-              <div><i class="fas fa-check-circle"></i></div>
-              <!-- <div class="leaf-class"><i class="fab fa-canadian-maple-leaf"></i> </div> -->
-            </div>
+            <div class="Icons">
+              <div class="d-flex">
+                <div class="Iclass pr-3">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="textIcons">Integer Commod Messa</div>
+              </div>
+              <div class="d-flex">
+                <div class="Iclass pr-3">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="textIcons">Integer Commod Messa</div>
+              </div>
+              <div class="d-flex">
+                <div class="Iclass pr-3">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="textIcons">Integer Commod Messa</div>
+              </div>
 
-            <div class="col col-lg-3 textIcons">
-              <!-- <div> Donec ornare , nunc id tincidunt semper ,sem felis</div> -->
-
-              <div>Integer Commod Messa</div>
-              <div>Integer Commod Messa</div>
-              <div>Integer Commod Messa</div>
-              <div>Integer Commod Messa</div>
-              <!-- <div> 100% <br/>bio &  organic product</div> -->
+              <div class="d-flex">
+                <div class="Iclass pr-3">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="textIcons">Integer Commod Messa</div>
+              </div>
             </div>
           </div>
         </div>
@@ -199,7 +209,7 @@
 
     <!-- **************** Price Div******************************** -->
 
-    <div class="PriceDiv bg-white">
+    <div class="PriceDiv bg-white col-sm-12">
       <p>Prices</p>
 
       <h4>
@@ -265,7 +275,7 @@
             <div>
               <img class=" img6" src="..\assets\img6.jpg" alt="First slide" />
               <div class="price2Font">
-                <h1>Green</h1>
+                <h1 class="h1Class">Green</h1>
 
                 <p>Lorem Ipsum has been the industry's standard dummy</p>
               </div>
@@ -291,7 +301,9 @@
                       <div>Integer Commod Messa</div>
                       <div>Integer Commod Messa</div>
                       <div>Integer Commod Messa</div>
-                      <div class="lastText"><h1>32.00USD</h1></div>
+                      <div class="lastText">
+                        <h1 class="h1Class">32.00USD</h1>
+                      </div>
                       <div class="lastText2">
                         <p>21.00USD</p>
 
@@ -312,11 +324,9 @@
       </div>
     </div>
 
-    <!-- *************** Contact us ************************** -->
-
-    <div class="contact">
-      <div class="row">
-        <div class="col-sm-12 col-md-6 co-lg-6 bg-white contact1">
+    <div class="row contact-us bg-white">
+      <div class="col-sm-12 col-md-10 col-lg-6">
+        <div>
           <i class="fas fa-phone-square contactIcon"></i>
           <p>Lorem Ipsum has been the industry's standard dummy</p>
           <h2>+61 (0) 2356421535</h2>
@@ -326,7 +336,9 @@
             <p>09.00AM - 0.6.00PM</p>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 co-lg-6 bg-white contact2">
+      </div>
+      <div class="col-sm-12 col-md-10 col-lg-6">
+        <div>
           <i class="fas fa-envelope-open-text contactIcon"></i>
           <p>Lorem Ipsum has been the industry's standard dummy</p>
           <h2>noreply@nopreply.com</h2>
@@ -355,7 +367,7 @@
       </h3>
     </div>
 
-    <div class="footer bg-white">
+    <div class="footer bg-white pb-2">
       <i class="fas fa-chevron-up"></i>
       <p>@2021 In Love with made by <a class="firstA">Aakash Patale</a></p>
     </div>
@@ -369,6 +381,9 @@ export default {
 </script>
 
 <style scoped>
+.mainHomeDiv {
+  overflow-x: hidden;
+}
 .PriceDiv2 {
   height: 200px;
 }
@@ -506,13 +521,17 @@ export default {
 }
 .Icons {
   font-size: 1.9rem;
+  margin-left: 50rem;
+}
+
+.Iclass {
   color: green;
 }
 
 .textIcons {
   font-size: 1.3rem;
   color: #fff;
-  line-height: 2.8rem;
+  line-height: 2.4rem;
 }
 
 .featureName {
@@ -540,11 +559,12 @@ export default {
   font-size: 0.9rem;
   color: green;
   text-align: left;
+  margin-top: 3rem;
 }
-.leftDiv h2 {
+.leftDiv h2[data-v-8dc7cce2] {
   text-align: left;
+  margin-bottom: 1.5rem;
 }
-
 .leftDiv p {
   font-size: 0.9rem;
 
@@ -557,9 +577,10 @@ export default {
 
 .rightDiv {
   background-image: url(https://images.unsplash.com/photo-1459347003562-525a24ac80a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
-  padding-top: 5rem;
+  padding-top: 10rem;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 700px;
+  background-size: cover;
 }
 
 .rightDiv p {
@@ -573,6 +594,8 @@ export default {
   border: none;
   padding: 0.5rem 1.3rem;
   border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .HomeBody3 {
@@ -595,7 +618,7 @@ export default {
 }
 
 .PriceDiv {
-  padding: 6rem;
+  padding: 7rem;
 }
 .PriceDiv p {
   color: green;
@@ -744,6 +767,26 @@ export default {
 }
 
 @media (max-width: 570px) {
+  .finalP {
+    display: none;
+  }
+  .navbar {
+    overflow-x: hidden;
+  }
+  .navbar-light .navbar-brand {
+    color: #fff;
+    margin-left: 0;
+    font-size: 2rem;
+  }
+
+  .Icons {
+    font-size: 1.9rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+  .HomeBody1 {
+    display: inline-block;
+  }
   .HomeBody1 h1 {
     font-size: 2.5rem;
   }
@@ -756,16 +799,13 @@ export default {
   .body-text {
     text-align: center;
   }
-  .HomeBody2 p {
-    text-align: center;
+  .HomeBody2 p[data-v-8dc7cce2] {
+    text-align: left;
+    margin-left: 0.5rem;
   }
-
   .leftDiv[data-v-8dc7cce2] {
     padding-left: 2rem;
   }
-  .finalP {
-    display: none;
-  }
 
   .leftClass {
     height: 600px;
@@ -789,25 +829,24 @@ export default {
     padding-top: 10rem;
     text-align: center;
     height: auto;
+    padding-bottom: 2rem;
   }
-
-  .img1 {
+  .img1[data-v-8dc7cce2] {
     width: 90%;
-    height: auto;
+    height: 250px;
     position: absolute;
-    top: 45rem;
-    bottom: -100px; /* bottom space */
-    left: 20px; /* right space */
+    top: 35rem;
+    bottom: -100px;
+    left: 18.2px;
   }
 
   .img2[data-v-8dc7cce2] {
-    width: 50%;
-    height: 13rem;
+    width: 90%;
+    height: 12rem;
     position: absolute;
-    top: 122rem;
-    left: 7rem;
+    top: 125.5rem;
+    left: 1.2rem;
   }
-
   .rightDiv {
     width: 100%;
   }
@@ -819,6 +858,13 @@ export default {
   .leftDiv {
     padding-left: 5rem;
   }
+
+  .leftDiv h4[data-v-8dc7cce2] {
+    font-size: 0.9rem;
+    color: green;
+    text-align: left;
+    margin-top: 7rem;
+  }
   .price2Div {
     overflow-x: hidden;
   }
@@ -828,11 +874,11 @@ export default {
     height: 600px;
   }
 
-  .img6 {
+  .img6[data-v-8dc7cce2][data-v-8dc7cce2] {
     width: 100%;
     position: absolute;
-    left: 0;
-    bottom: 200px;
+    left: 0rem;
+    bottom: 11rem;
   }
 
   .PriceDiv2 {
@@ -840,21 +886,155 @@ export default {
     height: auto;
   }
 
+.PriceDiv[data-v-8dc7cce2] {
+    padding: 1rem;
+    /* text-align: left; */
+    /* width: 100%; */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
   .leftClass {
     text-align: left;
     margin-right: 20rem;
   }
   .footer {
     font-size: 1.2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-us {
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .footer {
-    font-size: 1.2rem;
+@media (min-width: 571px) and (max-width: 768px) {
+  .belowDiv {
+    margin-left: 35.4rem;
+    margin-top: 4rem;
+  }
+
+  .mainHomeDiv {
+    overflow-x: hidden;
+  }
+
+  .leftDiv[data-v-8dc7cce2] {
+    padding-left: 3rem;
+    width: 100%;
+  }
+
+  .img1[data-v-8dc7cce2] {
+    width: 40rem;
+    height: auto;
+    position: absolute;
+    top: 24rem;
+    bottom: -100px;
+    left: 50px;
+  }
+  .img2 {
+    width: 21rem;
+    height: 300px;
+    position: absolute;
+    top: 94rem;
+    /* bottom: 0px; */
+    left: 200px;
+    margin-bottom: 5rem;
+  }
+
+  .leftDiv h4 {
+    font-size: 0.9rem;
+    color: green;
+    text-align: left;
+    margin-top: 14rem;
+  }
+
+  .rightDiv {
+    background-image: url(https://images.unsplash.com/photo-1459347003562-525a24ac80a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    padding-top: 10rem;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .FirstDiv {
+    width: 100%;
+    height: 400px;
+    padding-left: 2;
+  }
+
+  .SecondDiv {
+    width: 100%;
+  }
+
+  .contact-us {
+    padding-left: 8rem;
+    padding-top: 2rem;
+  }
+  .rightClass[data-v-8dc7cce2] {
+    width: 35rem;
+    height: 750px;
+    margin-left: 7rem;
+    padding-top: 18rem;
+    text-align: center;
+    margin-top: 7rem;
+  }
+
+  .img6 {
+    width: 20rem;
+    height: 300px;
+    position: absolute;
+    bottom: 50px;
+    left: 240px;
+  }
+
+  .HomeBody2 {
     padding-bottom: 1rem;
   }
+
+  .HomeBody2 i {
+    text-align: center;
+  }
+
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .HomeBody2 p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  /* .price2Icons{
+  display:none;
+
+}
+
+.price2Text{
+  display: none;
+} */
+
+  /* /* 
+
+    .navbar{
+    overflow-x: hidden;
+  } 
+  .navbar-light .navbar-brand {
+  color: #fff;
+  margin-left: 0;
+  font-size: 2rem;
+}
+
+.Icons {
+  font-size: 1.9rem;
+  margin-left: 14.5rem;
+  margin-top: 3rem;
+  }
+.HomeBody1 {
+  display: inline-block;
+}
   .HomeBody1 h1 {
     font-size: 2.5rem;
   }
@@ -867,24 +1047,14 @@ export default {
   .body-text {
     text-align: center;
   }
-  .HomeBody2 p {
-    text-align: center;
+  .HomeBody2 p[data-v-8dc7cce2] {
+    text-align: left;
+    margin-left: 0.5rem;
+}
+  .leftDiv[data-v-8dc7cce2] {
+    padding-left: 2rem;
   }
-
-  .leftDiv {
-    padding-left: 12rem;
-  }
-  .finalP {
-    display: none;
-  }
-
-  .img6[data-v-8dc7cce2] {
-    width: 100%;
-    position: absolute;
-    left: 4rem;
-    bottom: 15rem;
-  }
-
+  
   .leftClass {
     height: 600px;
 
@@ -904,29 +1074,27 @@ export default {
   .HomeBody2 {
     background-color: rgb(180, 240, 92);
     margin-top: 15rem;
-    padding-top: 10rem;
+    padding-top: 19rem;
     text-align: center;
     height: auto;
+    padding-bottom: 1.8rem;
   }
-
-  .img1 {
-    width: 90%;
+.img1[data-v-8dc7cce2] {
+    width: 80%;
     height: auto;
     position: absolute;
-    top: 40rem;
+    top: 36rem;
     bottom: -100px;
-    left: 30px;
-  }
+    left: 75px;
+}
 
-  .img2 {
-    width: 80%;
-    height: 190px;
+ .img2[data-v-8dc7cce2] {
+    width: 60%;
+    height: 16rem;
     position: absolute;
-    top: 126rem;
-    bottom: -100px; /* bottom space */
-    left: 30px; /* right space */
-  }
-
+    top: 118.5rem;
+    left: 8.2rem;
+}
   .rightDiv {
     width: 100%;
   }
@@ -947,13 +1115,18 @@ export default {
     height: 600px;
   }
 
-  .img6 {
+  .img6[data-v-8dc7cce2][data-v-8dc7cce2] {
     width: 100%;
     position: absolute;
-    left: 0;
-    bottom: 20px;
-  }
+    left: 4rem;
+    bottom: 11rem;
+}
 
+.contact-us[data-v-8dc7cce2] {
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+    padding-left: 8rem;
+}
   .PriceDiv2 {
     padding-bottom: 2rem;
     height: auto;
@@ -963,13 +1136,30 @@ export default {
     text-align: left;
     margin-right: 20rem;
   }
-
-  .img2 {
-    width: 40%;
-    height: 13rem;
-    position: absolute;
-    top: 113rem;
-    left: 13rem;
+  .footer {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
   }
+
+  .contact-us{
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+    
+  }
+
+  .PriceDiv2 h3{
+    padding-bottom: 1.5rem;
+  }
+ .leftDiv h4[data-v-8dc7cce2] {
+    font-size: 0.9rem;
+    color: green;
+    text-align: left;
+    margin-top: 10rem;
+}
+.leftDiv[data-v-8dc7cce2] {
+    background-color: rgb(248, 239, 239);
+    padding-left: 4rem;
+    width: 100%;
+} */
 }
 </style>
