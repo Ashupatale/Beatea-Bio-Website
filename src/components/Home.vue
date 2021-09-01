@@ -59,8 +59,6 @@
       <div class="Chooseus">
         <div class="container">
           <div class="row">
-           
-
             <div class="Icons">
               <div class="d-flex">
                 <div class="Iclass pr-3">
@@ -350,57 +348,74 @@
       </div>
     </div>
 
+    <div class="ContactUS bg-white pt-4 pb-4">
+      <section class="get-in-touch">
+        <h1 class="title">Get in touch</h1>
 
+        <form @submit="Login" class="contact-form row">
+          <div class="form-field col-lg-6">
+            <p v-if="error.length">
+              <i
+                class="fas fa-exclamation-circle text-danger errMsg"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Please Enter Name"
+              ></i>
+            </p>
 
-<div class="ContactUS bg-white pt-4 pb-4">
+            <input
+              id="name"
+              class="input-text js-input"
+              type="text"
+              v-model="name"
+            />
 
-        
-<section class="get-in-touch">
-   <h1 class="title">Get in touch</h1>
+            <label class="label">Name </label>
+          </div>
 
-<p v-if="error.length">
-   <marquee  width="40%" > Oops..You Have Missed Something..!</marquee>
+          <div class="form-field col-lg-6 ">
+            <p v-if="error.length">
+              <i
+                class="fas fa-exclamation-circle text-danger errMsg"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Please Enter Email"
+              ></i>
+            </p>
 
-  <ul>
-    <li v-for="e in error" v-bind:key="e.id" class="ListErrors">
-      {{e}}
+            <input
+              id="email"
+              class="input-text js-input"
+              type="email"
+              v-model="email"
+            />
+            <label class="label">E-mail</label>
+          </div>
 
-    </li>
-  </ul>
+          <div class="form-field col-lg-12">
+            <p v-if="error.length">
+              <i
+                class="fas fa-exclamation-circle text-danger errMsg "
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Please Enter Message "
+              ></i>
+            </p>
 
-</p>
-   <form @submit="Login" class="contact-form row">
-    
-      <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input" type="text" v-model="name" >
-         <label class="label" >Name</label>
-      </div>
-     
-      <div class="form-field col-lg-6 ">
-         <input id="email" class="input-text js-input" type="email" v-model="email"  >
-         <label class="label"  >E-mail</label>
-      </div>
-     
-      
-      <div class="form-field col-lg-12">
-         <input id="message" class="input-text js-input" type="text" v-model="message" >
-         <label class="label" >Message</label>
-      </div>
+            <input
+              id="message"
+              class="input-text js-input"
+              type="text"
+              v-model="message"
+            />
+            <label class="label">Message</label>
+          </div>
 
-
-      <div class="form-field col-lg-12">
-         <input class="submit-btn" type="submit" value="Submit">
-      </div>
-   </form>
-</section>
-
-
-
-
-      
-
-
-
+          <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Submit" />
+          </div>
+        </form>
+      </section>
     </div>
 
     <div class="PriceDiv2 bg-white">
@@ -431,60 +446,52 @@
 export default {
   name: "Home",
 
-  data(){
-    return{
+  data() {
+    return {
       error: [],
-      
-      name:null,
-      email:null,
-      message:null
-    }
+
+      name: null,
+      email: null,
+      message: null,
+    };
   },
-  
-  methods:{
-    Login(e)
-    {
-      if(this.name && this.email && this.message){
+
+  methods: {
+    Login(e) {
+      if (this.name && this.email && this.message) {
         console.log("SuccessFully Done");
-        alert("Thanks For Contacting Us...!")
+        alert("Thanks For Contacting Us...!");
       }
 
-        this.error=[];
-        if(!this.name){
-         this.error.push("Please Enter Name..!")
-        }
+      this.error = [];
+      if (!this.name) {
+        this.error.push("Please Enter Name..!");
+      }
 
-         if(!this.email){
-         this.error.push("Please Enter Email..!")
-        }
+      if (!this.email) {
+        this.error.push("Please Enter Email..!");
+      }
 
-        
-         if(!this.message){
-         this.error.push("Please Enter us a Message for us..!")
-        }
+      if (!this.message) {
+        this.error.push("Please Enter us a Message for us..!");
+      }
 
-        console.warn("Error: " + this.error)
+      console.warn("Error: " + this.error);
 
-      e.preventDefault()
+      e.preventDefault();
 
-      this.name="";
-       this.email="";
-      this.message="";
-
-
-     
-
-    }
-  }
+      this.name = "";
+      this.email = "";
+      this.message = "";
+    },
+  },
 };
 </script>
 
 <style scoped>
-
-.ListErrors{
+.ListErrors {
   color: red;
   list-style: none;
-
 }
 .mainHomeDiv {
   overflow-x: hidden;
@@ -518,7 +525,7 @@ export default {
   font-size: 1.2rem;
 }
 
-.mainHomeDiv {
+.Homebody1 {
   background-image: url(https://thumbs.dreamstime.com/b/green-tea-plantation-high-ridge-49553116.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -820,6 +827,12 @@ export default {
   padding-top: 3rem;
 }
 
+.errMsg {
+  text-align: center;
+  float: right;
+  font-size: 1.5rem;
+}
+
 .contact2 {
   height: 400px;
   padding-top: 3rem;
@@ -871,15 +884,10 @@ export default {
   font-weight: bold;
 }
 
-
-
-
-
 .get-in-touch {
   max-width: 800px;
   margin: 50px auto;
   position: relative;
-
 }
 .get-in-touch .title {
   text-align: center;
@@ -887,14 +895,18 @@ export default {
   letter-spacing: 3px;
   font-size: 3.2em;
   line-height: 48px;
-  padding-bottom: 48px;
-     color: #5543ca;
-    background: #5543ca;
-    background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-    background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-    background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+  padding-bottom: 40px;
+  color: #5543ca;
+  background: #5543ca;
+  background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+  background: -webkit-linear-gradient(
+    left,
+    #f4524d 0%,
+    #5543ca 100%
+  ) !important;
+  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .contact-form .form-field {
@@ -917,45 +929,50 @@ export default {
 .contact-form .input-text:focus + .label,
 .contact-form .input-text.not-empty + .label {
   -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
+  transform: translateY(-24px);
 }
 .contact-form .label {
   position: absolute;
   left: 20px;
-  bottom: 25px;
+  bottom: 35px;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
   color: #5543ca;
   cursor: text;
-  transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out, 
-  -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .contact-form .submit-btn {
   display: inline-block;
   background-color: #000;
-   background-image: linear-gradient(125deg,#a72879,#064497);
+  background-image: linear-gradient(125deg, #a72879, #064497);
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 16px;
   padding: 8px 16px;
   border: none;
-  width:200px;
+  width: 200px;
   cursor: pointer;
-
 }
 
-.contact-form .submit-btn:hover{
-    background: #833ab4; 
-background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
-
+.contact-form .submit-btn:hover {
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
 }
 
-
+.errMsg {
+  list-style: none;
+  color: red;
+}
 
 @media (max-width: 570px) {
   .finalP {
@@ -1077,13 +1094,13 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     height: auto;
   }
 
-.PriceDiv[data-v-8dc7cce2] {
+  .PriceDiv[data-v-8dc7cce2] {
     padding: 1rem;
     /* text-align: left; */
     /* width: 100%; */
     padding-top: 4rem;
     padding-bottom: 4rem;
-}
+  }
   .leftClass {
     text-align: left;
     margin-right: 20rem;
@@ -1098,8 +1115,13 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     padding-bottom: 4.5rem;
   }
 
-  .get-in-touch .title{
+  .get-in-touch .title {
     font-size: 2.5rem;
+  }
+
+  .errMsg[data-v-8dc7cce2] {
+    margin-bottom: 0rem;
+    text-align: center;
   }
 }
 
@@ -1201,6 +1223,107 @@ background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     margin-top: 0;
     margin-bottom: 1rem;
     text-align: left;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .belowDiv {
+      margin-left: 35.4rem;
+      margin-top: 4rem;
+    }
+
+    .mainHomeDiv {
+      overflow-x: hidden;
+    }
+
+    .leftDiv[data-v-8dc7cce2] {
+      padding-left: 3rem;
+      width: 100%;
+    }
+
+    .img1[data-v-8dc7cce2] {
+      width: 40rem;
+      height: auto;
+      position: absolute;
+      top: 24rem;
+      bottom: -100px;
+      left: 50px;
+    }
+    .img2 {
+      width: 21rem;
+      height: 300px;
+      position: absolute;
+      top: 94rem;
+      /* bottom: 0px; */
+      left: 200px;
+      margin-bottom: 5rem;
+    }
+
+    .leftDiv h4 {
+      font-size: 0.9rem;
+      color: green;
+      text-align: left;
+      margin-top: 14rem;
+    }
+
+    .rightDiv {
+      background-image: url(https://images.unsplash.com/photo-1459347003562-525a24ac80a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+      padding-top: 10rem;
+      background-repeat: no-repeat;
+      height: 700px;
+      background-size: cover;
+      width: 100%;
+    }
+
+    .FirstDiv {
+      width: 100%;
+      height: 400px;
+      padding-left: 2;
+    }
+
+    .SecondDiv {
+      width: 100%;
+    }
+
+    .contact-us {
+      padding-left: 8rem;
+      padding-top: 2rem;
+    }
+    .rightClass[data-v-8dc7cce2] {
+      width: 35rem;
+      height: 750px;
+      margin-left: 7rem;
+      padding-top: 18rem;
+      text-align: center;
+      margin-top: 7rem;
+    }
+
+    .img6 {
+      width: 20rem;
+      height: 300px;
+      position: absolute;
+      bottom: 50px;
+      left: 240px;
+    }
+
+    .HomeBody2 {
+      padding-bottom: 1rem;
+    }
+
+    .HomeBody2 i {
+      text-align: center;
+    }
+
+    .col-md-12 {
+      flex: 0 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .HomeBody2 p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
   }
   /* .price2Icons{
   display:none;
